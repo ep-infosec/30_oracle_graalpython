@@ -1,0 +1,12 @@
+Input:
+------
+assert not hascased
+
+Output:
+-------
+Module[1:0-1:19]
+    Assert[1:0-1:19]
+        Test: 
+            UnaryOp[1:7-1:19]
+                Op: Not
+                Value: Name[1:11-1:19] Value: "hascased"

@@ -1,0 +1,23 @@
+Input:
+------
+{1:2, **{}, 3:4, **{5:6, 7:8}}
+
+Output:
+-------
+Module[1:0-1:30]
+    Dict[1:0-1:30]
+        Values:
+            Key: LONG[1:1-1:2] Value: 1
+            Val: LONG[1:3-1:4] Value: 2
+            Val: 
+                Dict[1:8-1:10]
+                    Values:
+            Key: LONG[1:12-1:13] Value: 3
+            Val: LONG[1:14-1:15] Value: 4
+            Val: 
+                Dict[1:19-1:29]
+                    Values:
+                        Key: LONG[1:20-1:21] Value: 5
+                        Val: LONG[1:22-1:23] Value: 6
+                        Key: LONG[1:25-1:26] Value: 7
+                        Val: LONG[1:27-1:28] Value: 8

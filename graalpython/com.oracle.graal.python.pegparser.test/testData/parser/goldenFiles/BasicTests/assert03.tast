@@ -1,0 +1,24 @@
+Input:
+------
+def avg():
+    assert len != 0, getMessage(len)
+
+Output:
+-------
+Module[1:0-2:36]
+    FunctionDef[1:0-2:36]
+        Name:avg
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of avg ----
+        Assert[2:4-2:36]
+            Test: 
+                Compare[2:11-2:19]
+                    LHS: Name[2:11-2:14] Value: "len"
+                    Op: NotEq
+                    RHS: LONG[2:18-2:19] Value: 0
+            Msg: 
+                Call[2:21-2:36]
+                    Target: Name[2:21-2:31] Value: "getMessage"
+                    Args:
+                        Name[2:32-2:35] Value: "len"
+        ---- End of avg function ----

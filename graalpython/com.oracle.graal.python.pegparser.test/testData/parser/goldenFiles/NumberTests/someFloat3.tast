@@ -1,0 +1,8 @@
+Input:
+------
+.3
+
+Output:
+-------
+Module[1:0-1:2]
+    DOUBLE[1:0-1:2] Value: 0.3

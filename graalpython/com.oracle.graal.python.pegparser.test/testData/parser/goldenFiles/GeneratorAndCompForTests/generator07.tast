@@ -1,0 +1,46 @@
+Input:
+------
+def merge(h):
+    while len(h) > 1:
+        while True:
+            value, order, next = s = h[0]
+            yield value
+
+Output:
+-------
+Module[1:0-5:23]
+    FunctionDef[1:0-5:23]
+        Name:merge
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:10-1:11] h
+        ---- Function body of merge ----
+        While[2:4-5:23]
+            Condition: 
+                Compare[2:10-2:20]
+                    LHS: 
+                        Call[2:10-2:16]
+                            Target: Name[2:10-2:13] Value: "len"
+                            Args:
+                                Name[2:14-2:15] Value: "h"
+                    Op: Gt
+                    RHS: LONG[2:19-2:20] Value: 1
+            Body:
+                While[3:8-5:23]
+                    Condition: BOOLEAN[3:14-3:18] Value: true
+                    Body:
+                        Assign[4:12-4:41]
+                            LHS: 
+                                Tuple[4:12-4:30] Context: Store
+                                    Values:
+                                        Name[4:12-4:17] Value: "value" Store
+                                        Name[4:19-4:24] Value: "order" Store
+                                        Name[4:26-4:30] Value: "next" Store
+                                Name[4:33-4:34] Value: "s" Store
+                            RHS: 
+                                Subscript[4:37-4:41]
+                                    Slice: LONG[4:39-4:40] Value: 0
+                                    Value: Name[4:37-4:38] Value: "h"
+                        Yield[5:12-5:23]
+                            Name[5:18-5:23] Value: "value"
+        ---- End of merge function ----

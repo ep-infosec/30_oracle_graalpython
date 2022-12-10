@@ -1,0 +1,16 @@
+Input:
+------
+def fn (): x += 3
+
+Output:
+-------
+Module[1:0-1:17]
+    FunctionDef[1:0-1:17]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        AugAssign[1:11-1:17]
+            Op: Add
+            LHS: Name[1:11-1:12] Value: "x" Store
+            RHS: LONG[1:16-1:17] Value: 3
+        ---- End of fn function ----

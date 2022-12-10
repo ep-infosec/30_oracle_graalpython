@@ -1,0 +1,9 @@
+Input:
+------
+[]
+
+Output:
+-------
+Module[1:0-1:2]
+    List[1:0-1:2]
+        Values:

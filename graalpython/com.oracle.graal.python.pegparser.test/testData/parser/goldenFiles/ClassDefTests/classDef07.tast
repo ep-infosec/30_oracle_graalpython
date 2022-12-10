@@ -1,0 +1,33 @@
+Input:
+------
+class OrderedDict(dict):
+  def setup(dict_setitem = dict.__setitem__):
+    dict_setitem()
+    dict.clear()
+
+Output:
+-------
+Module[1:0-4:16]
+    ClassDef[1:0-4:16] OrderedDict
+        Bases:
+            Name[1:18-1:22] Value: "dict"
+        ---- Class body of OrderedDict ----
+        FunctionDef[2:2-4:16]
+            Name:setup
+            ArgumentsTy[1:0-1:0]
+                Args:
+                    ArgTy[2:12-2:24] dict_setitem
+                Defaults:
+                    Attribute[2:27-2:43] 
+                        Receiver: Name[2:27-2:31] Value: "dict"
+                        Attr: __setitem__
+            ---- Function body of setup ----
+            Call[3:4-3:18]
+                Target: Name[3:4-3:16] Value: "dict_setitem"
+            Call[4:4-4:16]
+                Target: 
+                    Attribute[4:4-4:14] 
+                        Receiver: Name[4:4-4:8] Value: "dict"
+                        Attr: clear
+            ---- End of setup function ----
+        ---- End of OrderedDict class ----

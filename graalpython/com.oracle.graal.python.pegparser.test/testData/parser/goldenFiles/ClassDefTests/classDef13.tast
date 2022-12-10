@@ -1,0 +1,39 @@
+Input:
+------
+class Point:
+  x = 0
+  y = 0
+p = Point()
+a = p.x + p.y
+
+
+Output:
+-------
+Module[1:0-5:13]
+    ClassDef[1:0-3:7] Point
+        ---- Class body of Point ----
+        Assign[2:2-2:7]
+            LHS: Name[2:2-2:3] Value: "x" Store
+            RHS: LONG[2:6-2:7] Value: 0
+        Assign[3:2-3:7]
+            LHS: Name[3:2-3:3] Value: "y" Store
+            RHS: LONG[3:6-3:7] Value: 0
+        ---- End of Point class ----
+    Assign[4:0-4:11]
+        LHS: Name[4:0-4:1] Value: "p" Store
+        RHS: 
+            Call[4:4-4:11]
+                Target: Name[4:4-4:9] Value: "Point"
+    Assign[5:0-5:13]
+        LHS: Name[5:0-5:1] Value: "a" Store
+        RHS: 
+            BinOp[5:4-5:13]
+                Op: Add
+                LHS: 
+                    Attribute[5:4-5:7] 
+                        Receiver: Name[5:4-5:5] Value: "p"
+                        Attr: x
+                RHS: 
+                    Attribute[5:10-5:13] 
+                        Receiver: Name[5:10-5:11] Value: "p"
+                        Attr: y

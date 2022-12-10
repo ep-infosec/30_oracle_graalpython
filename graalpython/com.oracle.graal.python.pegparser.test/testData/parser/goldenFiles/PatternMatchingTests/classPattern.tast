@@ -1,0 +1,82 @@
+Input:
+------
+match a:
+    case A.B():
+        pass
+    case A(True):
+        pass
+    case A(42 | -4+2j as x,) :
+        pass
+    case A.B(a1=_,) | A(42, a1='abc'):
+        pass
+
+
+Output:
+-------
+Module[1:0-9:12]
+    Match[1:0-9:12]
+        Subject: Name[1:6-1:7] Value: "a"
+        Cases:
+            MatchCaseTy[2:4-3:12]
+                Pattern: 
+                    MatchClass[2:9-2:14]
+                        Cls: 
+                            Attribute[2:9-2:12] 
+                                Receiver: Name[2:9-2:10] Value: "A"
+                                Attr: B
+                Body:
+                    Pass[3:8-3:12]
+            MatchCaseTy[4:4-5:12]
+                Pattern: 
+                    MatchClass[4:9-4:16]
+                        Cls: Name[4:9-4:10] Value: "A"
+                        Patterns:
+                            MatchSingleton[4:11-4:15], value: true
+                Body:
+                    Pass[5:8-5:12]
+            MatchCaseTy[6:4-7:12]
+                Pattern: 
+                    MatchClass[6:9-6:28]
+                        Cls: Name[6:9-6:10] Value: "A"
+                        Patterns:
+                            MatchAs[6:11-6:26]
+                                Pattern: 
+                                    MatchOr[6:11-6:21]
+                                        Patterns:
+                                            MatchValue[6:11-6:13]
+                                                Value: LONG[6:11-6:13] Value: 42
+                                            MatchValue[6:16-6:21]
+                                                Value: 
+                                                    BinOp[6:16-6:21]
+                                                        Op: Add
+                                                        LHS: 
+                                                            UnaryOp[6:16-6:18]
+                                                                Op: USub
+                                                                Value: LONG[6:17-6:18] Value: 4
+                                                        RHS: COMPLEX[6:19-6:21] Value: 0.00000+2.00000j
+                                Name: x
+                Body:
+                    Pass[7:8-7:12]
+            MatchCaseTy[8:4-9:12]
+                Pattern: 
+                    MatchOr[8:9-8:37]
+                        Patterns:
+                            MatchClass[8:9-8:19]
+                                Cls: 
+                                    Attribute[8:9-8:12] 
+                                        Receiver: Name[8:9-8:10] Value: "A"
+                                        Attr: B
+                                KwdAttrs: a1
+                                KwdPatterns:
+                                    MatchAs[8:16-8:17]
+                            MatchClass[8:22-8:37]
+                                Cls: Name[8:22-8:23] Value: "A"
+                                Patterns:
+                                    MatchValue[8:24-8:26]
+                                        Value: LONG[8:24-8:26] Value: 42
+                                KwdAttrs: a1
+                                KwdPatterns:
+                                    MatchValue[8:31-8:36]
+                                        Value: RAW[8:31-8:36] Value: "abc"
+                Body:
+                    Pass[9:8-9:12]

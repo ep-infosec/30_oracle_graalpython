@@ -1,0 +1,75 @@
+Input:
+------
+def b_func():
+  exec_gen = False
+  def _inner_func():
+    def doit():
+      nonlocal exec_gen
+      exec_gen = True
+      return [1]
+    for A in doit():
+      for C in Y:
+        yield A
+  gen = _inner_func()
+  Y = [1, 2]
+  list(gen)
+  return gen
+
+Output:
+-------
+Module[1:0-14:12]
+    FunctionDef[1:0-14:12]
+        Name:b_func
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of b_func ----
+        Assign[2:2-2:18]
+            LHS: Name[2:2-2:10] Value: "exec_gen" Store
+            RHS: BOOLEAN[2:13-2:18] Value: false
+        FunctionDef[3:2-10:15]
+            Name:_inner_func
+            ArgumentsTy[1:0-1:0]
+            ---- Function body of _inner_func ----
+            FunctionDef[4:4-7:16]
+                Name:doit
+                ArgumentsTy[1:0-1:0]
+                ---- Function body of doit ----
+                Nonlocal[5:6-5:23]: exec_gen 
+                Assign[6:6-6:21]
+                    LHS: Name[6:6-6:14] Value: "exec_gen" Store
+                    RHS: BOOLEAN[6:17-6:21] Value: true
+                Return[7:6-7:16] 
+                    List[7:13-7:16]
+                        Values:
+                            LONG[7:14-7:15] Value: 1
+                ---- End of doit function ----
+            For[8:4-10:15]
+                Target: Name[8:8-8:9] Value: "A" Store
+                Iter: 
+                    Call[8:13-8:19]
+                        Target: Name[8:13-8:17] Value: "doit"
+                Body:
+                    For[9:6-10:15]
+                        Target: Name[9:10-9:11] Value: "C" Store
+                        Iter: Name[9:15-9:16] Value: "Y"
+                        Body:
+                            Yield[10:8-10:15]
+                                Name[10:14-10:15] Value: "A"
+            ---- End of _inner_func function ----
+        Assign[11:2-11:21]
+            LHS: Name[11:2-11:5] Value: "gen" Store
+            RHS: 
+                Call[11:8-11:21]
+                    Target: Name[11:8-11:19] Value: "_inner_func"
+        Assign[12:2-12:12]
+            LHS: Name[12:2-12:3] Value: "Y" Store
+            RHS: 
+                List[12:6-12:12]
+                    Values:
+                        LONG[12:7-12:8] Value: 1
+                        LONG[12:10-12:11] Value: 2
+        Call[13:2-13:11]
+            Target: Name[13:2-13:6] Value: "list"
+            Args:
+                Name[13:7-13:10] Value: "gen"
+        Return[14:2-14:12] Name[14:9-14:12] Value: "gen"
+        ---- End of b_func function ----

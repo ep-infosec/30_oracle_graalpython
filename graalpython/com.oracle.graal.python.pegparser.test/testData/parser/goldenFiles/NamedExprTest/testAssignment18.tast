@@ -1,0 +1,21 @@
+Input:
+------
+element = a[b:=0, c:=0]
+
+Output:
+-------
+Module[1:0-1:23]
+    Assign[1:0-1:23]
+        LHS: Name[1:0-1:7] Value: "element" Store
+        RHS: 
+            Subscript[1:10-1:23]
+                Slice: 
+                    Tuple[1:12-1:22]
+                        Values:
+                            NamedExpr[1:12-1:16]
+                                Target: Name[1:12-1:13] Value: "b" Store
+                                Value: LONG[1:15-1:16] Value: 0
+                            NamedExpr[1:18-1:22]
+                                Target: Name[1:18-1:19] Value: "c" Store
+                                Value: LONG[1:21-1:22] Value: 0
+                Value: Name[1:10-1:11] Value: "a"

@@ -1,0 +1,66 @@
+Input:
+------
+def fn():
+    class MyIter:
+        def __iter__(self):
+            return self
+        def __next__(self):
+            raise StopIteration(42)
+    def gen():
+        nonlocal ret
+        ret = yield from MyIter()
+    ret = None
+    list(gen())
+
+Output:
+-------
+Module[1:0-11:15]
+    FunctionDef[1:0-11:15]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        ClassDef[2:4-6:35] MyIter
+            ---- Class body of MyIter ----
+            FunctionDef[3:8-4:23]
+                Name:__iter__
+                ArgumentsTy[1:0-1:0]
+                    Args:
+                        ArgTy[3:21-3:25] self
+                ---- Function body of __iter__ ----
+                Return[4:12-4:23] Name[4:19-4:23] Value: "self"
+                ---- End of __iter__ function ----
+            FunctionDef[5:8-6:35]
+                Name:__next__
+                ArgumentsTy[1:0-1:0]
+                    Args:
+                        ArgTy[5:21-5:25] self
+                ---- Function body of __next__ ----
+                Raise[6:12-6:35]
+                    Exc: 
+                        Call[6:18-6:35]
+                            Target: Name[6:18-6:31] Value: "StopIteration"
+                            Args:
+                                LONG[6:32-6:34] Value: 42
+                ---- End of __next__ function ----
+            ---- End of MyIter class ----
+        FunctionDef[7:4-9:33]
+            Name:gen
+            ArgumentsTy[1:0-1:0]
+            ---- Function body of gen ----
+            Nonlocal[8:8-8:20]: ret 
+            Assign[9:8-9:33]
+                LHS: Name[9:8-9:11] Value: "ret" Store
+                RHS: 
+                    YieldFrom[9:14-9:33]
+                        Call[9:25-9:33]
+                            Target: Name[9:25-9:31] Value: "MyIter"
+            ---- End of gen function ----
+        Assign[10:4-10:14]
+            LHS: Name[10:4-10:7] Value: "ret" Store
+            RHS: NONE[10:10-10:14] Value: null
+        Call[11:4-11:15]
+            Target: Name[11:4-11:8] Value: "list"
+            Args:
+                Call[11:9-11:14]
+                    Target: Name[11:9-11:12] Value: "gen"
+        ---- End of fn function ----

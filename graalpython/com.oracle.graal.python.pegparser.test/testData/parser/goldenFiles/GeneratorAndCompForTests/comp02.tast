@@ -1,0 +1,67 @@
+Input:
+------
+def mro(cls, abcs=None):
+    for base in abcs:
+        if not any(issubclass(b, base) for b in cls.__bases__):
+            abstract_bases.append(base)
+    other = [mro(base, abcs=abcs) for base in other]
+
+Output:
+-------
+Module[1:0-5:52]
+    FunctionDef[1:0-5:52]
+        Name:mro
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:8-1:11] cls
+                ArgTy[1:13-1:17] abcs
+            Defaults:
+                NONE[1:18-1:22] Value: null
+        ---- Function body of mro ----
+        For[2:4-4:39]
+            Target: Name[2:8-2:12] Value: "base" Store
+            Iter: Name[2:16-2:20] Value: "abcs"
+            Body:
+                If[3:8-4:39]
+                    Test: 
+                        UnaryOp[3:11-3:62]
+                            Op: Not
+                            Value: Call[3:15-3:62]
+                                Target: Name[3:15-3:18] Value: "any"
+                                Args:
+                                    GeneratorExp[3:18-3:62]
+                                        Element: 
+                                            Call[3:19-3:38]
+                                                Target: Name[3:19-3:29] Value: "issubclass"
+                                                Args:
+                                                    Name[3:30-3:31] Value: "b"
+                                                    Name[3:33-3:37] Value: "base"
+                                        ComprehensionTy[3:39-3:61]
+                                            Target: Name[3:43-3:44] Value: "b" Store
+                                            Iterator: 
+                                                Attribute[3:48-3:61] 
+                                                    Receiver: Name[3:48-3:51] Value: "cls"
+                                                    Attr: __bases__
+                    Then:
+                        Call[4:12-4:39]
+                            Target: 
+                                Attribute[4:12-4:33] 
+                                    Receiver: Name[4:12-4:26] Value: "abstract_bases"
+                                    Attr: append
+                            Args:
+                                Name[4:34-4:38] Value: "base"
+        Assign[5:4-5:52]
+            LHS: Name[5:4-5:9] Value: "other" Store
+            RHS: 
+                ListComp[5:12-5:52]
+                    Element: Call[5:13-5:33]
+                        Target: Name[5:13-5:16] Value: "mro"
+                        Args:
+                            Name[5:17-5:21] Value: "base"
+                        KWArgs:
+                            KeywordTy[5:23-5:32]
+                                abcs: Name[5:28-5:32] Value: "abcs"
+                    ComprehensionTy[5:34-5:51]
+                        Target: Name[5:38-5:42] Value: "base" Store
+                        Iterator: Name[5:46-5:51] Value: "other"
+        ---- End of mro function ----

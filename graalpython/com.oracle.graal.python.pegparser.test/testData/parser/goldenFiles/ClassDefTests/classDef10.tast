@@ -1,0 +1,38 @@
+Input:
+------
+def test(arg):
+  pass
+class FalseRec:
+  def test(self, arg):
+    return test(arg+1)
+
+Output:
+-------
+Module[1:0-5:22]
+    FunctionDef[1:0-2:6]
+        Name:test
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:9-1:12] arg
+        ---- Function body of test ----
+        Pass[2:2-2:6]
+        ---- End of test function ----
+    ClassDef[3:0-5:22] FalseRec
+        ---- Class body of FalseRec ----
+        FunctionDef[4:2-5:22]
+            Name:test
+            ArgumentsTy[1:0-1:0]
+                Args:
+                    ArgTy[4:11-4:15] self
+                    ArgTy[4:17-4:20] arg
+            ---- Function body of test ----
+            Return[5:4-5:22] 
+                Call[5:11-5:22]
+                    Target: Name[5:11-5:15] Value: "test"
+                    Args:
+                        BinOp[5:16-5:21]
+                            Op: Add
+                            LHS: Name[5:16-5:19] Value: "arg"
+                            RHS: LONG[5:20-5:21] Value: 1
+            ---- End of test function ----
+        ---- End of FalseRec class ----

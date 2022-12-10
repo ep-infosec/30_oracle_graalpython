@@ -1,0 +1,9 @@
+Input:
+------
+yield from f
+
+Output:
+-------
+Module[1:0-1:12]
+    YieldFrom[1:0-1:12]
+        Name[1:11-1:12] Value: "f"

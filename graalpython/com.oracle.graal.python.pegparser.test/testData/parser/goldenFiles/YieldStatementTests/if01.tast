@@ -1,0 +1,24 @@
+Input:
+------
+def gen():
+  if b:
+    yield 12
+  else:
+    yield 13
+
+Output:
+-------
+Module[1:0-5:12]
+    FunctionDef[1:0-5:12]
+        Name:gen
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of gen ----
+        If[2:2-5:12]
+            Test: Name[2:5-2:6] Value: "b"
+            Then:
+                Yield[3:4-3:12]
+                    LONG[3:10-3:12] Value: 12
+            Else:
+                Yield[5:4-5:12]
+                    LONG[5:10-5:12] Value: 13
+        ---- End of gen function ----

@@ -1,0 +1,23 @@
+Input:
+------
+def fn():
+  with A() as a:
+    pass
+
+Output:
+-------
+Module[1:0-3:8]
+    FunctionDef[1:0-3:8]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        With[2:2-3:8]
+            Items:
+                WithItemTy[2:7-2:15]
+                    ContextExpr: 
+                        Call[2:7-2:10]
+                            Target: Name[2:7-2:8] Value: "A"
+                    OptionalVars: Name[2:14-2:15] Value: "a" Store
+            Body:
+                Pass[3:4-3:8]
+        ---- End of fn function ----

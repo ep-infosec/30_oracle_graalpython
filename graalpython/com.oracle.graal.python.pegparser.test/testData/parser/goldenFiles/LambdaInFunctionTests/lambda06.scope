@@ -1,0 +1,11 @@
+ScopeEnvironment
+  Scope null Module
+    Symbols:
+      fn: [DefLocal, Local]
+    Scope fn Function
+      Scope lambda Function
+            Flags: [IsNested]
+            Varnames: x, y
+            Symbols:
+                  x: [DefParam, Local]
+                  y: [DefParam, Local]

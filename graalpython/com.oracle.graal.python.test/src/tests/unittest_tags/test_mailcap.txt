@@ -1,0 +1,8 @@
+*graalpython.lib-python.3.test.test_mailcap.FindmatchTest.test_findmatch
+*graalpython.lib-python.3.test.test_mailcap.FindmatchTest.test_test
+*graalpython.lib-python.3.test.test_mailcap.GetcapsTest.test_mock_getcaps
+*graalpython.lib-python.3.test.test_mailcap.GetcapsTest.test_system_mailcap
+*graalpython.lib-python.3.test.test_mailcap.HelperFunctionTest.test_listmailcapfiles
+*graalpython.lib-python.3.test.test_mailcap.HelperFunctionTest.test_lookup
+*graalpython.lib-python.3.test.test_mailcap.HelperFunctionTest.test_readmailcapfile
+*graalpython.lib-python.3.test.test_mailcap.HelperFunctionTest.test_subst

@@ -1,0 +1,8 @@
+Input:
+------
+raise
+
+Output:
+-------
+Module[1:0-1:5]
+    Raise[1:0-1:5]

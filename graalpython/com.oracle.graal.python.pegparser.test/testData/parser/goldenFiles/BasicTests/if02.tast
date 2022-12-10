@@ -1,0 +1,16 @@
+Input:
+------
+if False: 
+  10
+else :
+  a
+
+Output:
+-------
+Module[1:0-4:3]
+    If[1:0-4:3]
+        Test: BOOLEAN[1:3-1:8] Value: false
+        Then:
+            LONG[2:2-2:4] Value: 10
+        Else:
+            Name[4:2-4:3] Value: "a"

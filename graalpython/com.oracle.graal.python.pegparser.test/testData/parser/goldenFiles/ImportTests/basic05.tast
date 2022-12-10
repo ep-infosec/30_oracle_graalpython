@@ -1,0 +1,10 @@
+Input:
+------
+import sys, math as my_math
+
+Output:
+-------
+Module[1:0-1:27]
+    Import[1:0-1:27]
+        sys
+        math as my_math

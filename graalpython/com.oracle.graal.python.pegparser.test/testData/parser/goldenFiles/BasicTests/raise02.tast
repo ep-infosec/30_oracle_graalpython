@@ -1,0 +1,9 @@
+Input:
+------
+raise NameError
+
+Output:
+-------
+Module[1:0-1:15]
+    Raise[1:0-1:15]
+        Exc: Name[1:6-1:15] Value: "NameError"

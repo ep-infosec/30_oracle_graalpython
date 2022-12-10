@@ -1,0 +1,31 @@
+Input:
+------
+def fn(self):
+    caretspace = (c.isspace() for c in caretspace)
+    yield caretspace
+
+Output:
+-------
+Module[1:0-3:20]
+    FunctionDef[1:0-3:20]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:7-1:11] self
+        ---- Function body of fn ----
+        Assign[2:4-2:50]
+            LHS: Name[2:4-2:14] Value: "caretspace" Store
+            RHS: 
+                GeneratorExp[2:17-2:50]
+                    Element: 
+                        Call[2:18-2:29]
+                            Target: 
+                                Attribute[2:18-2:27] 
+                                    Receiver: Name[2:18-2:19] Value: "c"
+                                    Attr: isspace
+                    ComprehensionTy[2:30-2:49]
+                        Target: Name[2:34-2:35] Value: "c" Store
+                        Iterator: Name[2:39-2:49] Value: "caretspace"
+        Yield[3:4-3:20]
+            Name[3:10-3:20] Value: "caretspace"
+        ---- End of fn function ----

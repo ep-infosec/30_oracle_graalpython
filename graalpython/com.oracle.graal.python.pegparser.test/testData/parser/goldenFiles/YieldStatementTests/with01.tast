@@ -1,0 +1,26 @@
+Input:
+------
+def gen():
+  with fn():
+    yield 12
+    yield 13
+
+Output:
+-------
+Module[1:0-4:12]
+    FunctionDef[1:0-4:12]
+        Name:gen
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of gen ----
+        With[2:2-4:12]
+            Items:
+                WithItemTy[2:7-2:11]
+                    ContextExpr: 
+                        Call[2:7-2:11]
+                            Target: Name[2:7-2:9] Value: "fn"
+            Body:
+                Yield[3:4-3:12]
+                    LONG[3:10-3:12] Value: 12
+                Yield[4:4-4:12]
+                    LONG[4:10-4:12] Value: 13
+        ---- End of gen function ----

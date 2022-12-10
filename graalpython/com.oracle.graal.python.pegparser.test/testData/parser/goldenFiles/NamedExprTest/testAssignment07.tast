@@ -1,0 +1,14 @@
+Input:
+------
+(loc := (1, 2))
+
+Output:
+-------
+Module[1:0-1:15]
+    NamedExpr[1:1-1:14]
+        Target: Name[1:1-1:4] Value: "loc" Store
+        Value: 
+            Tuple[1:8-1:14]
+                Values:
+                    LONG[1:9-1:10] Value: 1
+                    LONG[1:12-1:13] Value: 2

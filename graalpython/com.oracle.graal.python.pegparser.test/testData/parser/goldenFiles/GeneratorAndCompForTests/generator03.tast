@@ -1,0 +1,30 @@
+Input:
+------
+def fn():
+  c = 10
+  (x + c for x in range(10))
+
+Output:
+-------
+Module[1:0-3:28]
+    FunctionDef[1:0-3:28]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        Assign[2:2-2:8]
+            LHS: Name[2:2-2:3] Value: "c" Store
+            RHS: LONG[2:6-2:8] Value: 10
+        GeneratorExp[3:2-3:28]
+            Element: 
+                BinOp[3:3-3:8]
+                    Op: Add
+                    LHS: Name[3:3-3:4] Value: "x"
+                    RHS: Name[3:7-3:8] Value: "c"
+            ComprehensionTy[3:9-3:27]
+                Target: Name[3:13-3:14] Value: "x" Store
+                Iterator: 
+                    Call[3:18-3:27]
+                        Target: Name[3:18-3:23] Value: "range"
+                        Args:
+                            LONG[3:24-3:26] Value: 10
+        ---- End of fn function ----

@@ -1,0 +1,11 @@
+Input:
+------
+x >= y
+
+Output:
+-------
+Module[1:0-1:6]
+    Compare[1:0-1:6]
+        LHS: Name[1:0-1:1] Value: "x"
+        Op: GtE
+        RHS: Name[1:5-1:6] Value: "y"

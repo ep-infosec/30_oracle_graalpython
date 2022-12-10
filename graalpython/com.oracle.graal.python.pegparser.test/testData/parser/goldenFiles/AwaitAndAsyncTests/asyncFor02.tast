@@ -1,0 +1,24 @@
+Input:
+------
+async def f():
+ async for i, b in (): pass
+
+Output:
+-------
+Module[1:0-2:27]
+    AsyncFunctionDef[1:0-2:27]
+        Name:f
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of f ----
+        AsyncFor[2:1-2:27]
+            Target: 
+                Tuple[2:11-2:15] Context: Store
+                    Values:
+                        Name[2:11-2:12] Value: "i" Store
+                        Name[2:14-2:15] Value: "b" Store
+            Iter: 
+                Tuple[2:19-2:21]
+                    Values:
+            Body:
+                Pass[2:23-2:27]
+        ---- End of f function ----

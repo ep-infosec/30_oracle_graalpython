@@ -1,0 +1,44 @@
+Input:
+------
+def fn(a, b=0, *arg, k1, k2=0): return a + b + k1 + k2 + sum(arg)
+
+Output:
+-------
+Module[1:0-1:65]
+    FunctionDef[1:0-1:65]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:7-1:8] a
+                ArgTy[1:10-1:11] b
+            VarArg: ArgTy[1:16-1:19] arg
+            KwOnlyArgs:
+                ArgTy[1:21-1:23] k1
+                ArgTy[1:25-1:27] k2
+            Defaults:
+                LONG[1:12-1:13] Value: 0
+            KwDefaults:
+                LONG[1:28-1:29] Value: 0
+        ---- Function body of fn ----
+        Return[1:32-1:65] 
+            BinOp[1:39-1:65]
+                Op: Add
+                LHS: 
+                    BinOp[1:39-1:54]
+                        Op: Add
+                        LHS: 
+                            BinOp[1:39-1:49]
+                                Op: Add
+                                LHS: 
+                                    BinOp[1:39-1:44]
+                                        Op: Add
+                                        LHS: Name[1:39-1:40] Value: "a"
+                                        RHS: Name[1:43-1:44] Value: "b"
+                                RHS: Name[1:47-1:49] Value: "k1"
+                        RHS: Name[1:52-1:54] Value: "k2"
+                RHS: 
+                    Call[1:57-1:65]
+                        Target: Name[1:57-1:60] Value: "sum"
+                        Args:
+                            Name[1:61-1:64] Value: "arg"
+        ---- End of fn function ----

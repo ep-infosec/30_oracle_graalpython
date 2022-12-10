@@ -1,0 +1,10 @@
+Input:
+------
+import sys, math
+
+Output:
+-------
+Module[1:0-1:16]
+    Import[1:0-1:16]
+        sys
+        math

@@ -1,0 +1,21 @@
+Input:
+------
+def fn():
+  class DerivedClassName(modname.BaseClassName): pass
+
+Output:
+-------
+Module[1:0-2:53]
+    FunctionDef[1:0-2:53]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        ClassDef[2:2-2:53] DerivedClassName
+            Bases:
+                Attribute[2:25-2:46] 
+                    Receiver: Name[2:25-2:32] Value: "modname"
+                    Attr: BaseClassName
+            ---- Class body of DerivedClassName ----
+            Pass[2:49-2:53]
+            ---- End of DerivedClassName class ----
+        ---- End of fn function ----

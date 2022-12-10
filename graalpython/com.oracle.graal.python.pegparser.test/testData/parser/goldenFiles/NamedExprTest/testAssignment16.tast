@@ -1,0 +1,39 @@
+Input:
+------
+fib = {(c := a): (a := b) + (b := a + c) - b for __ in range(6)}
+
+Output:
+-------
+Module[1:0-1:64]
+    Assign[1:0-1:64]
+        LHS: Name[1:0-1:3] Value: "fib" Store
+        RHS: 
+            DictComp[1:6-1:64]
+                Key: NamedExpr[1:8-1:14]
+                    Target: Name[1:8-1:9] Value: "c" Store
+                    Value: Name[1:13-1:14] Value: "a"
+                Value: BinOp[1:17-1:44]
+                    Op: Sub
+                    LHS: 
+                        BinOp[1:17-1:40]
+                            Op: Add
+                            LHS: 
+                                NamedExpr[1:18-1:24]
+                                    Target: Name[1:18-1:19] Value: "a" Store
+                                    Value: Name[1:23-1:24] Value: "b"
+                            RHS: 
+                                NamedExpr[1:29-1:39]
+                                    Target: Name[1:29-1:30] Value: "b" Store
+                                    Value: 
+                                        BinOp[1:34-1:39]
+                                            Op: Add
+                                            LHS: Name[1:34-1:35] Value: "a"
+                                            RHS: Name[1:38-1:39] Value: "c"
+                    RHS: Name[1:43-1:44] Value: "b"
+                ComprehensionTy[1:45-1:63]
+                    Target: Name[1:49-1:51] Value: "__" Store
+                    Iterator: 
+                        Call[1:55-1:63]
+                            Target: Name[1:55-1:60] Value: "range"
+                            Args:
+                                LONG[1:61-1:62] Value: 6

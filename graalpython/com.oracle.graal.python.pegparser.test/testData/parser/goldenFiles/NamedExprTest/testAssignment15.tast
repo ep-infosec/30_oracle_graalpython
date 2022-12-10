@@ -1,0 +1,14 @@
+Input:
+------
+while a := False: pass
+
+Output:
+-------
+Module[1:0-1:22]
+    While[1:0-1:22]
+        Condition: 
+            NamedExpr[1:6-1:16]
+                Target: Name[1:6-1:7] Value: "a" Store
+                Value: BOOLEAN[1:11-1:16] Value: false
+        Body:
+            Pass[1:18-1:22]

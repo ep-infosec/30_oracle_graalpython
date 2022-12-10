@@ -1,0 +1,18 @@
+Input:
+------
+b = (
+  (0x69, 0x131), # iı
+)
+
+Output:
+-------
+Module[1:0-3:1]
+    Assign[1:0-3:1]
+        LHS: Name[1:0-1:1] Value: "b" Store
+        RHS: 
+            Tuple[1:4-3:1]
+                Values:
+                    Tuple[2:2-2:15]
+                        Values:
+                            LONG[2:3-2:7] Value: 105
+                            LONG[2:9-2:14] Value: 305

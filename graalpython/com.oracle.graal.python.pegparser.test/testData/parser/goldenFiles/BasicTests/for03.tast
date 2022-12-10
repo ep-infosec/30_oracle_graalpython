@@ -1,0 +1,26 @@
+Input:
+------
+for x in xrange(3):
+  if x == 1:
+    break
+
+
+Output:
+-------
+Module[1:0-3:9]
+    For[1:0-3:9]
+        Target: Name[1:4-1:5] Value: "x" Store
+        Iter: 
+            Call[1:9-1:18]
+                Target: Name[1:9-1:15] Value: "xrange"
+                Args:
+                    LONG[1:16-1:17] Value: 3
+        Body:
+            If[2:2-3:9]
+                Test: 
+                    Compare[2:5-2:11]
+                        LHS: Name[2:5-2:6] Value: "x"
+                        Op: Eq
+                        RHS: LONG[2:10-2:11] Value: 1
+                Then:
+                    Break[3:4-3:9]

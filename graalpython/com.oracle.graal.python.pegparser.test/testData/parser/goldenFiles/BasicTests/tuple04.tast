@@ -1,0 +1,10 @@
+Input:
+------
+t = (2)
+
+Output:
+-------
+Module[1:0-1:7]
+    Assign[1:0-1:7]
+        LHS: Name[1:0-1:1] Value: "t" Store
+        RHS: LONG[1:5-1:6] Value: 2

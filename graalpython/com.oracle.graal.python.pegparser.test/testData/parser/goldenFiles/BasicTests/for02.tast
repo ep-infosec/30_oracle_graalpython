@@ -1,0 +1,20 @@
+Input:
+------
+for i in range(210):
+  print(i)
+
+Output:
+-------
+Module[1:0-2:10]
+    For[1:0-2:10]
+        Target: Name[1:4-1:5] Value: "i" Store
+        Iter: 
+            Call[1:9-1:19]
+                Target: Name[1:9-1:14] Value: "range"
+                Args:
+                    LONG[1:15-1:18] Value: 210
+        Body:
+            Call[2:2-2:10]
+                Target: Name[2:2-2:7] Value: "print"
+                Args:
+                    Name[2:8-2:9] Value: "i"

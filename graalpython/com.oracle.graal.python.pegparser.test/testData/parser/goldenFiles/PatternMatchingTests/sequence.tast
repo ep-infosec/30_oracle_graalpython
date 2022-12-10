@@ -1,0 +1,113 @@
+Input:
+------
+match a:
+    case 'abc', *_: pass
+    case 'def', *x: pass
+    case (): pass
+    case (42): pass     # not a sequence
+    case (42,): pass
+    case (()): pass
+    case ((),): pass
+    case ([]): pass
+    case []: pass
+    case [()]: pass
+    case ['abc']: pass
+    case ['def',]: pass
+    case ['ghi', (*a,)]: pass
+
+
+Output:
+-------
+Module[1:0-14:29]
+    Match[1:0-14:29]
+        Subject: Name[1:6-1:7] Value: "a"
+        Cases:
+            MatchCaseTy[2:4-2:24]
+                Pattern: 
+                    MatchSequence[2:9-2:18]
+                        Patterns:
+                            MatchValue[2:9-2:14]
+                                Value: RAW[2:9-2:14] Value: "abc"
+                            MatchStar[2:16-2:18]
+                Body:
+                    Pass[2:20-2:24]
+            MatchCaseTy[3:4-3:24]
+                Pattern: 
+                    MatchSequence[3:9-3:18]
+                        Patterns:
+                            MatchValue[3:9-3:14]
+                                Value: RAW[3:9-3:14] Value: "def"
+                            MatchStar[3:16-3:18]: x
+                Body:
+                    Pass[3:20-3:24]
+            MatchCaseTy[4:4-4:17]
+                Pattern: MatchSequence[4:9-4:11]
+                Body:
+                    Pass[4:13-4:17]
+            MatchCaseTy[5:4-5:19]
+                Pattern: 
+                    MatchValue[5:10-5:12]
+                        Value: LONG[5:10-5:12] Value: 42
+                Body:
+                    Pass[5:15-5:19]
+            MatchCaseTy[6:4-6:20]
+                Pattern: 
+                    MatchSequence[6:9-6:14]
+                        Patterns:
+                            MatchValue[6:10-6:12]
+                                Value: LONG[6:10-6:12] Value: 42
+                Body:
+                    Pass[6:16-6:20]
+            MatchCaseTy[7:4-7:19]
+                Pattern: MatchSequence[7:10-7:12]
+                Body:
+                    Pass[7:15-7:19]
+            MatchCaseTy[8:4-8:20]
+                Pattern: 
+                    MatchSequence[8:9-8:14]
+                        Patterns:
+                            MatchSequence[8:10-8:12]
+                Body:
+                    Pass[8:16-8:20]
+            MatchCaseTy[9:4-9:19]
+                Pattern: MatchSequence[9:10-9:12]
+                Body:
+                    Pass[9:15-9:19]
+            MatchCaseTy[10:4-10:17]
+                Pattern: MatchSequence[10:9-10:11]
+                Body:
+                    Pass[10:13-10:17]
+            MatchCaseTy[11:4-11:19]
+                Pattern: 
+                    MatchSequence[11:9-11:13]
+                        Patterns:
+                            MatchSequence[11:10-11:12]
+                Body:
+                    Pass[11:15-11:19]
+            MatchCaseTy[12:4-12:22]
+                Pattern: 
+                    MatchSequence[12:9-12:16]
+                        Patterns:
+                            MatchValue[12:10-12:15]
+                                Value: RAW[12:10-12:15] Value: "abc"
+                Body:
+                    Pass[12:18-12:22]
+            MatchCaseTy[13:4-13:23]
+                Pattern: 
+                    MatchSequence[13:9-13:17]
+                        Patterns:
+                            MatchValue[13:10-13:15]
+                                Value: RAW[13:10-13:15] Value: "def"
+                Body:
+                    Pass[13:19-13:23]
+            MatchCaseTy[14:4-14:29]
+                Pattern: 
+                    MatchSequence[14:9-14:23]
+                        Patterns:
+                            MatchValue[14:10-14:15]
+                                Value: RAW[14:10-14:15] Value: "ghi"
+                            MatchSequence[14:17-14:22]
+                                Patterns:
+                                    MatchStar[14:18-14:20]: a
+                Body:
+                    Pass[14:25-14:29]

@@ -1,0 +1,8 @@
+Input:
+------
+'a' ' String'
+
+Output:
+-------
+Module[1:0-1:13]
+    RAW[1:0-1:13] Value: "a String"

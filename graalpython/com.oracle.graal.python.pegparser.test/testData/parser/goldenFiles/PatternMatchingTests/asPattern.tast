@@ -1,0 +1,38 @@
+Input:
+------
+match a:
+    case True | False as x:
+        pass
+    case y:
+        pass
+    case _:
+        pass
+
+
+Output:
+-------
+Module[1:0-7:12]
+    Match[1:0-7:12]
+        Subject: Name[1:6-1:7] Value: "a"
+        Cases:
+            MatchCaseTy[2:4-3:12]
+                Pattern: 
+                    MatchAs[2:9-2:26]
+                        Pattern: 
+                            MatchOr[2:9-2:21]
+                                Patterns:
+                                    MatchSingleton[2:9-2:13], value: true
+                                    MatchSingleton[2:16-2:21], value: false
+                        Name: x
+                Body:
+                    Pass[3:8-3:12]
+            MatchCaseTy[4:4-5:12]
+                Pattern: 
+                    MatchAs[4:9-4:10]
+                        Name: y
+                Body:
+                    Pass[5:8-5:12]
+            MatchCaseTy[6:4-7:12]
+                Pattern: MatchAs[6:9-6:10]
+                Body:
+                    Pass[7:8-7:12]

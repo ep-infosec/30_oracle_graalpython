@@ -1,0 +1,12 @@
+Input:
+------
+del x, y, z
+
+Output:
+-------
+Module[1:0-1:11]
+    Delete[1:0-1:11]
+        Targets:
+            Name[1:4-1:5] Value: "x" Del
+            Name[1:7-1:8] Value: "y" Del
+            Name[1:10-1:11] Value: "z" Del

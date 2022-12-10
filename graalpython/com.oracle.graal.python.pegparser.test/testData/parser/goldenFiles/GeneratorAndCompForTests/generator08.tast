@@ -1,0 +1,46 @@
+Input:
+------
+def merge(h):
+    for order, it in b():
+        value = next()
+    while len(h) > 1:
+        yield value
+
+Output:
+-------
+Module[1:0-5:19]
+    FunctionDef[1:0-5:19]
+        Name:merge
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:10-1:11] h
+        ---- Function body of merge ----
+        For[2:4-3:22]
+            Target: 
+                Tuple[2:8-2:17] Context: Store
+                    Values:
+                        Name[2:8-2:13] Value: "order" Store
+                        Name[2:15-2:17] Value: "it" Store
+            Iter: 
+                Call[2:21-2:24]
+                    Target: Name[2:21-2:22] Value: "b"
+            Body:
+                Assign[3:8-3:22]
+                    LHS: Name[3:8-3:13] Value: "value" Store
+                    RHS: 
+                        Call[3:16-3:22]
+                            Target: Name[3:16-3:20] Value: "next"
+        While[4:4-5:19]
+            Condition: 
+                Compare[4:10-4:20]
+                    LHS: 
+                        Call[4:10-4:16]
+                            Target: Name[4:10-4:13] Value: "len"
+                            Args:
+                                Name[4:14-4:15] Value: "h"
+                    Op: Gt
+                    RHS: LONG[4:19-4:20] Value: 1
+            Body:
+                Yield[5:8-5:19]
+                    Name[5:14-5:19] Value: "value"
+        ---- End of merge function ----

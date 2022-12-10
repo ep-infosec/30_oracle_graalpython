@@ -1,0 +1,16 @@
+Input:
+------
+while True:
+  pass
+else:
+  pass
+
+Output:
+-------
+Module[1:0-4:6]
+    While[1:0-4:6]
+        Condition: BOOLEAN[1:6-1:10] Value: true
+        Body:
+            Pass[2:2-2:6]
+        Else:
+            Pass[4:2-4:6]

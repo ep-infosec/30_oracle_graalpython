@@ -1,0 +1,46 @@
+Input:
+------
+def non_empty_lines(path):
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                yield line
+
+Output:
+-------
+Module[1:0-6:26]
+    FunctionDef[1:0-6:26]
+        Name:non_empty_lines
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:20-1:24] path
+        ---- Function body of non_empty_lines ----
+        With[2:4-6:26]
+            Items:
+                WithItemTy[2:9-2:24]
+                    ContextExpr: 
+                        Call[2:9-2:19]
+                            Target: Name[2:9-2:13] Value: "open"
+                            Args:
+                                Name[2:14-2:18] Value: "path"
+                    OptionalVars: Name[2:23-2:24] Value: "f" Store
+            Body:
+                For[3:8-6:26]
+                    Target: Name[3:12-3:16] Value: "line" Store
+                    Iter: Name[3:20-3:21] Value: "f"
+                    Body:
+                        Assign[4:12-4:31]
+                            LHS: Name[4:12-4:16] Value: "line" Store
+                            RHS: 
+                                Call[4:19-4:31]
+                                    Target: 
+                                        Attribute[4:19-4:29] 
+                                            Receiver: Name[4:19-4:23] Value: "line"
+                                            Attr: strip
+                        If[5:12-6:26]
+                            Test: Name[5:15-5:19] Value: "line"
+                            Then:
+                                Yield[6:16-6:26]
+                                    Name[6:22-6:26] Value: "line"
+        ---- End of non_empty_lines function ----

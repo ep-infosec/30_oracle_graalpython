@@ -1,0 +1,18 @@
+Input:
+------
+generator = type((lambda: (yield))())
+
+Output:
+-------
+Module[1:0-1:37]
+    Assign[1:0-1:37]
+        LHS: Name[1:0-1:9] Value: "generator" Store
+        RHS: 
+            Call[1:12-1:37]
+                Target: Name[1:12-1:16] Value: "type"
+                Args:
+                    Call[1:17-1:36]
+                        Target: 
+                            Lambda[1:18-1:33]
+                                ArgumentsTy[1:0-1:0]
+                                Body: Yield[1:27-1:32]

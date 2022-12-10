@@ -1,0 +1,41 @@
+Input:
+------
+def gen(a):
+  with a:
+    bla(p1, p2, p3)
+  with fn():
+    yield 12
+    yield 13
+
+Output:
+-------
+Module[1:0-6:12]
+    FunctionDef[1:0-6:12]
+        Name:gen
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:8-1:9] a
+        ---- Function body of gen ----
+        With[2:2-3:19]
+            Items:
+                WithItemTy[2:7-2:8]
+                    ContextExpr: Name[2:7-2:8] Value: "a"
+            Body:
+                Call[3:4-3:19]
+                    Target: Name[3:4-3:7] Value: "bla"
+                    Args:
+                        Name[3:8-3:10] Value: "p1"
+                        Name[3:12-3:14] Value: "p2"
+                        Name[3:16-3:18] Value: "p3"
+        With[4:2-6:12]
+            Items:
+                WithItemTy[4:7-4:11]
+                    ContextExpr: 
+                        Call[4:7-4:11]
+                            Target: Name[4:7-4:9] Value: "fn"
+            Body:
+                Yield[5:4-5:12]
+                    LONG[5:10-5:12] Value: 12
+                Yield[6:4-6:12]
+                    LONG[6:10-6:12] Value: 13
+        ---- End of gen function ----

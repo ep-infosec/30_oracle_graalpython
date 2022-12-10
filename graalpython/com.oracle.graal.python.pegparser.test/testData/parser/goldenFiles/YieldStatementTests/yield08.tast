@@ -1,0 +1,20 @@
+Input:
+------
+def f(): 1 + (yield)*2
+
+Output:
+-------
+Module[1:0-1:22]
+    FunctionDef[1:0-1:22]
+        Name:f
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of f ----
+        BinOp[1:9-1:22]
+            Op: Add
+            LHS: LONG[1:9-1:10] Value: 1
+            RHS: 
+                BinOp[1:13-1:22]
+                    Op: Mult
+                    LHS: Yield[1:14-1:19]
+                    RHS: LONG[1:21-1:22] Value: 2
+        ---- End of f function ----

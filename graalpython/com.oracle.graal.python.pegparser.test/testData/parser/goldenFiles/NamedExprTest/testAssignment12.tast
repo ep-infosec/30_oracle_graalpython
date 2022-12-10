@@ -1,0 +1,32 @@
+Input:
+------
+res = [[y := spam(x), x/y] for x in range(1, 5)]
+
+Output:
+-------
+Module[1:0-1:48]
+    Assign[1:0-1:48]
+        LHS: Name[1:0-1:3] Value: "res" Store
+        RHS: 
+            ListComp[1:6-1:48]
+                Element: List[1:7-1:26]
+                    Values:
+                        NamedExpr[1:8-1:20]
+                            Target: Name[1:8-1:9] Value: "y" Store
+                            Value: 
+                                Call[1:13-1:20]
+                                    Target: Name[1:13-1:17] Value: "spam"
+                                    Args:
+                                        Name[1:18-1:19] Value: "x"
+                        BinOp[1:22-1:25]
+                            Op: Div
+                            LHS: Name[1:22-1:23] Value: "x"
+                            RHS: Name[1:24-1:25] Value: "y"
+                ComprehensionTy[1:27-1:47]
+                    Target: Name[1:31-1:32] Value: "x" Store
+                    Iterator: 
+                        Call[1:36-1:47]
+                            Target: Name[1:36-1:41] Value: "range"
+                            Args:
+                                LONG[1:42-1:43] Value: 1
+                                LONG[1:45-1:46] Value: 5

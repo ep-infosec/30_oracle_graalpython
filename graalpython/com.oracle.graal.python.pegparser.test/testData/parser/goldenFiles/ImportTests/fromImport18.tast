@@ -1,0 +1,9 @@
+Input:
+------
+from .bogus import x
+
+Output:
+-------
+Module[1:0-1:20]
+    ImportFrom[1:0-1:20] Level 1 bogus
+        x

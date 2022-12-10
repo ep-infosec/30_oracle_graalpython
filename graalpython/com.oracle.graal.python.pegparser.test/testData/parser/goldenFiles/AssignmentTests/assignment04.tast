@@ -1,0 +1,14 @@
+Input:
+------
+a = b = c = d = e
+
+Output:
+-------
+Module[1:0-1:17]
+    Assign[1:0-1:17]
+        LHS: 
+            Name[1:0-1:1] Value: "a" Store
+            Name[1:4-1:5] Value: "b" Store
+            Name[1:8-1:9] Value: "c" Store
+            Name[1:12-1:13] Value: "d" Store
+        RHS: Name[1:16-1:17] Value: "e"

@@ -1,0 +1,12 @@
+Input:
+------
+del a[i]
+
+Output:
+-------
+Module[1:0-1:8]
+    Delete[1:0-1:8]
+        Targets:
+            Subscript[1:4-1:8] Context: Del
+                Slice: Name[1:6-1:7] Value: "i"
+                Value: Name[1:4-1:5] Value: "a"

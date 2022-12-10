@@ -1,0 +1,18 @@
+Input:
+------
+def fn():
+ index : int = 0
+
+
+Output:
+-------
+Module[1:0-2:16]
+    FunctionDef[1:0-2:16]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        AnnAssign[2:1-2:16]simple
+            Annotation: Name[2:9-2:12] Value: "int"
+            LHS: Name[2:1-2:6] Value: "index" Store
+            RHS: LONG[2:15-2:16] Value: 0
+        ---- End of fn function ----

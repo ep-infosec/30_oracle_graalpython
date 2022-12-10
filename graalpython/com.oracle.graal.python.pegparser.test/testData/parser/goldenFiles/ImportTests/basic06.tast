@@ -1,0 +1,9 @@
+Input:
+------
+import encodings.aliases
+
+Output:
+-------
+Module[1:0-1:24]
+    Import[1:0-1:24]
+        encodings.aliases

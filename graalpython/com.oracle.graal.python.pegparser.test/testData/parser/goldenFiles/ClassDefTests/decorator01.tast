@@ -1,0 +1,14 @@
+Input:
+------
+@class_decorator
+class foo():pass
+
+Output:
+-------
+Module[1:0-2:16]
+    ClassDef[2:0-2:16] foo
+        Decorators:
+            Name[1:1-1:16] Value: "class_decorator"
+        ---- Class body of foo ----
+        Pass[2:12-2:16]
+        ---- End of foo class ----

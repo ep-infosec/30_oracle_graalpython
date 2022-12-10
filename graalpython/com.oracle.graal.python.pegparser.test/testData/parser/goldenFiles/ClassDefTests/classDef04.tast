@@ -1,0 +1,35 @@
+Input:
+------
+class Complex:
+ def __init__(self, realpart, imagpart):
+  self.r = realpart
+  self.i = imagpart
+
+
+Output:
+-------
+Module[1:0-4:19]
+    ClassDef[1:0-4:19] Complex
+        ---- Class body of Complex ----
+        FunctionDef[2:1-4:19]
+            Name:__init__
+            ArgumentsTy[1:0-1:0]
+                Args:
+                    ArgTy[2:14-2:18] self
+                    ArgTy[2:20-2:28] realpart
+                    ArgTy[2:30-2:38] imagpart
+            ---- Function body of __init__ ----
+            Assign[3:2-3:19]
+                LHS: 
+                    Attribute[3:2-3:8] 
+                        Receiver: Name[3:2-3:6] Value: "self"
+                        Attr: r
+                RHS: Name[3:11-3:19] Value: "realpart"
+            Assign[4:2-4:19]
+                LHS: 
+                    Attribute[4:2-4:8] 
+                        Receiver: Name[4:2-4:6] Value: "self"
+                        Attr: i
+                RHS: Name[4:11-4:19] Value: "imagpart"
+            ---- End of __init__ function ----
+        ---- End of Complex class ----

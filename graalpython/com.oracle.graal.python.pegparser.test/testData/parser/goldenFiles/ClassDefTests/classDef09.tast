@@ -1,0 +1,14 @@
+Input:
+------
+class Enum(metaclass=EnumMeta): pass
+
+Output:
+-------
+Module[1:0-1:36]
+    ClassDef[1:0-1:36] Enum
+        Keywords:
+            KeywordTy[1:11-1:29]
+                metaclass: Name[1:21-1:29] Value: "EnumMeta"
+        ---- Class body of Enum ----
+        Pass[1:32-1:36]
+        ---- End of Enum class ----

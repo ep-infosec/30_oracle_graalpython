@@ -1,0 +1,15 @@
+ScopeEnvironment
+  Scope null Module
+    Symbols:
+      print: [Use, GlobalImplicit]
+      test: [DefLocal, Use, Local]
+    Scope test Function
+        Symbols:
+            a: [DefLocal, Local]
+            fn1: [DefLocal, Local]
+            fn2: [DefLocal, Local]
+            locals: [Use, GlobalImplicit]
+      Scope fn1 Function
+            Flags: [IsNested]
+      Scope fn2 Function
+            Flags: [IsNested]

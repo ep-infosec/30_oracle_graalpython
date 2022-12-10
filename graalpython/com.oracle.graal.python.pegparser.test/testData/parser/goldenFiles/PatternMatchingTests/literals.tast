@@ -1,0 +1,72 @@
+Input:
+------
+match a:
+    case 'abc':
+        pass
+    case 42 | -42:
+        pass
+    case -1 + 4j | 0 - 1j:
+        pass
+    case -1j | 0j:
+        pass
+
+
+Output:
+-------
+Module[1:0-9:12]
+    Match[1:0-9:12]
+        Subject: Name[1:6-1:7] Value: "a"
+        Cases:
+            MatchCaseTy[2:4-3:12]
+                Pattern: 
+                    MatchValue[2:9-2:14]
+                        Value: RAW[2:9-2:14] Value: "abc"
+                Body:
+                    Pass[3:8-3:12]
+            MatchCaseTy[4:4-5:12]
+                Pattern: 
+                    MatchOr[4:9-4:17]
+                        Patterns:
+                            MatchValue[4:9-4:11]
+                                Value: LONG[4:9-4:11] Value: 42
+                            MatchValue[4:14-4:17]
+                                Value: 
+                                    UnaryOp[4:14-4:17]
+                                        Op: USub
+                                        Value: LONG[4:15-4:17] Value: 42
+                Body:
+                    Pass[5:8-5:12]
+            MatchCaseTy[6:4-7:12]
+                Pattern: 
+                    MatchOr[6:9-6:25]
+                        Patterns:
+                            MatchValue[6:9-6:16]
+                                Value: 
+                                    BinOp[6:9-6:16]
+                                        Op: Add
+                                        LHS: 
+                                            UnaryOp[6:9-6:11]
+                                                Op: USub
+                                                Value: LONG[6:10-6:11] Value: 1
+                                        RHS: COMPLEX[6:14-6:16] Value: 0.00000+4.00000j
+                            MatchValue[6:19-6:25]
+                                Value: 
+                                    BinOp[6:19-6:25]
+                                        Op: Sub
+                                        LHS: LONG[6:19-6:20] Value: 0
+                                        RHS: COMPLEX[6:23-6:25] Value: 0.00000+1.00000j
+                Body:
+                    Pass[7:8-7:12]
+            MatchCaseTy[8:4-9:12]
+                Pattern: 
+                    MatchOr[8:9-8:17]
+                        Patterns:
+                            MatchValue[8:9-8:12]
+                                Value: 
+                                    UnaryOp[8:9-8:12]
+                                        Op: USub
+                                        Value: COMPLEX[8:10-8:12] Value: 0.00000+1.00000j
+                            MatchValue[8:15-8:17]
+                                Value: COMPLEX[8:15-8:17] Value: 0.00000+0.00000j
+                Body:
+                    Pass[9:8-9:12]

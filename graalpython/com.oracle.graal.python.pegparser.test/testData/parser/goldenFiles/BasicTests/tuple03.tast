@@ -1,0 +1,12 @@
+Input:
+------
+t = ()
+
+Output:
+-------
+Module[1:0-1:6]
+    Assign[1:0-1:6]
+        LHS: Name[1:0-1:1] Value: "t" Store
+        RHS: 
+            Tuple[1:4-1:6]
+                Values:

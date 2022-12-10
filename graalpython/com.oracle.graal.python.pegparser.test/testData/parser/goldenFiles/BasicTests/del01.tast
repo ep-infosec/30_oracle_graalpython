@@ -1,0 +1,10 @@
+Input:
+------
+del x
+
+Output:
+-------
+Module[1:0-1:5]
+    Delete[1:0-1:5]
+        Targets:
+            Name[1:4-1:5] Value: "x" Del

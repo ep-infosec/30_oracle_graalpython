@@ -1,0 +1,11 @@
+Input:
+------
+a |= b
+
+Output:
+-------
+Module[1:0-1:6]
+    AugAssign[1:0-1:6]
+        Op: BitOr
+        LHS: Name[1:0-1:1] Value: "a" Store
+        RHS: Name[1:5-1:6] Value: "b"

@@ -1,0 +1,9 @@
+Input:
+------
+yield 12
+
+Output:
+-------
+Module[1:0-1:8]
+    Yield[1:0-1:8]
+        LONG[1:6-1:8] Value: 12

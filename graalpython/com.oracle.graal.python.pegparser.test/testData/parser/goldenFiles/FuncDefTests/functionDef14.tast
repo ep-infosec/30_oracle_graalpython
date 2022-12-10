@@ -1,0 +1,33 @@
+Input:
+------
+def bla():
+  install(extra_opts=[1])
+def install(extra_opts=[]):
+  pass
+
+Output:
+-------
+Module[1:0-4:6]
+    FunctionDef[1:0-2:25]
+        Name:bla
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of bla ----
+        Call[2:2-2:25]
+            Target: Name[2:2-2:9] Value: "install"
+            KWArgs:
+                KeywordTy[2:10-2:24]
+                    extra_opts: List[2:21-2:24]
+                        Values:
+                            LONG[2:22-2:23] Value: 1
+        ---- End of bla function ----
+    FunctionDef[3:0-4:6]
+        Name:install
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[3:12-3:22] extra_opts
+            Defaults:
+                List[3:23-3:25]
+                    Values:
+        ---- Function body of install ----
+        Pass[4:2-4:6]
+        ---- End of install function ----

@@ -1,0 +1,28 @@
+Input:
+------
+def test(self, msg, offset=0):
+    return test(msg, self.string, 1)
+
+Output:
+-------
+Module[1:0-2:36]
+    FunctionDef[1:0-2:36]
+        Name:test
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:9-1:13] self
+                ArgTy[1:15-1:18] msg
+                ArgTy[1:20-1:26] offset
+            Defaults:
+                LONG[1:27-1:28] Value: 0
+        ---- Function body of test ----
+        Return[2:4-2:36] 
+            Call[2:11-2:36]
+                Target: Name[2:11-2:15] Value: "test"
+                Args:
+                    Name[2:16-2:19] Value: "msg"
+                    Attribute[2:21-2:32] 
+                        Receiver: Name[2:21-2:25] Value: "self"
+                        Attr: string
+                    LONG[2:34-2:35] Value: 1
+        ---- End of test function ----

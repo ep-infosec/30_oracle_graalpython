@@ -1,0 +1,19 @@
+Input:
+------
+def f(): x = y = yield 1
+
+Output:
+-------
+Module[1:0-1:24]
+    FunctionDef[1:0-1:24]
+        Name:f
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of f ----
+        Assign[1:9-1:24]
+            LHS: 
+                Name[1:9-1:10] Value: "x" Store
+                Name[1:13-1:14] Value: "y" Store
+            RHS: 
+                Yield[1:17-1:24]
+                    LONG[1:23-1:24] Value: 1
+        ---- End of f function ----

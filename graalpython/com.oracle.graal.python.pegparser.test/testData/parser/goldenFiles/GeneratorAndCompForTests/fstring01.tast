@@ -1,0 +1,31 @@
+Input:
+------
+def fn(someset): return ', '.join(f'{name}' for name in someset)
+
+Output:
+-------
+Module[1:0-1:64]
+    FunctionDef[1:0-1:64]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:7-1:14] someset
+        ---- Function body of fn ----
+        Return[1:17-1:64] 
+            Call[1:24-1:64]
+                Target: 
+                    Attribute[1:24-1:33] 
+                        Receiver: RAW[1:24-1:28] Value: ", "
+                        Attr: join
+                Args:
+                    GeneratorExp[1:33-1:64]
+                        Element: 
+                            JoinedStr[1:34-1:43]
+                                 Values:
+                                    FormattedValue[1:37-1:41]
+                                        Value: Name[1:37-1:41] Value: "name"
+                                        Conversion: -1
+                        ComprehensionTy[1:44-1:63]
+                            Target: Name[1:48-1:52] Value: "name" Store
+                            Iterator: Name[1:56-1:63] Value: "someset"
+        ---- End of fn function ----

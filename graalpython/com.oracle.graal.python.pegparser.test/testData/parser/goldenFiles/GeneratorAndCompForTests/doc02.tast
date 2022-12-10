@@ -1,0 +1,42 @@
+Input:
+------
+def walk_stack(f):
+    """Documentation"""
+    if f is None:
+        f = a()
+    while f is not None:
+        yield f
+
+
+Output:
+-------
+Module[1:0-6:15]
+    FunctionDef[1:0-6:15]
+        Name:walk_stack
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:15-1:16] f
+        ---- Function body of walk_stack ----
+        RAW[2:4-2:23] Value: "Documentation"
+        If[3:4-4:15]
+            Test: 
+                Compare[3:7-3:16]
+                    LHS: Name[3:7-3:8] Value: "f"
+                    Op: Is
+                    RHS: NONE[3:12-3:16] Value: null
+            Then:
+                Assign[4:8-4:15]
+                    LHS: Name[4:8-4:9] Value: "f" Store
+                    RHS: 
+                        Call[4:12-4:15]
+                            Target: Name[4:12-4:13] Value: "a"
+        While[5:4-6:15]
+            Condition: 
+                Compare[5:10-5:23]
+                    LHS: Name[5:10-5:11] Value: "f"
+                    Op: IsNot
+                    RHS: NONE[5:19-5:23] Value: null
+            Body:
+                Yield[6:8-6:15]
+                    Name[6:14-6:15] Value: "f"
+        ---- End of walk_stack function ----

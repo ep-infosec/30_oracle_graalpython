@@ -1,0 +1,15 @@
+Input:
+------
+class DerivedClassName(Base1, Base2, Base3): pass
+
+Output:
+-------
+Module[1:0-1:49]
+    ClassDef[1:0-1:49] DerivedClassName
+        Bases:
+            Name[1:23-1:28] Value: "Base1"
+            Name[1:30-1:35] Value: "Base2"
+            Name[1:37-1:42] Value: "Base3"
+        ---- Class body of DerivedClassName ----
+        Pass[1:45-1:49]
+        ---- End of DerivedClassName class ----

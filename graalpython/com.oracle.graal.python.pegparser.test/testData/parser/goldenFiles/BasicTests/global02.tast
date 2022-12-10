@@ -1,0 +1,8 @@
+Input:
+------
+global x
+
+Output:
+-------
+Module[1:0-1:8]
+    Global[1:0-1:8]: x 

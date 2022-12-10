@@ -1,0 +1,8 @@
+Input:
+------
+12.0E4j
+
+Output:
+-------
+Module[1:0-1:7]
+    COMPLEX[1:0-1:7] Value: 0.00000+120000j

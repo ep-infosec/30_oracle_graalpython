@@ -1,0 +1,15 @@
+Input:
+------
+def foo(*args): 
+  pass
+
+Output:
+-------
+Module[1:0-2:6]
+    FunctionDef[1:0-2:6]
+        Name:foo
+        ArgumentsTy[1:0-1:0]
+            VarArg: ArgTy[1:9-1:13] args
+        ---- Function body of foo ----
+        Pass[2:2-2:6]
+        ---- End of foo function ----

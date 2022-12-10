@@ -1,0 +1,57 @@
+Input:
+------
+x = 0
+def fn():
+  for x in range(3):
+    x = 4
+    if x == 1:
+      print('jedna')
+      break
+    else:
+      print(x)
+
+fn()
+
+
+
+Output:
+-------
+Module[1:0-11:4]
+    Assign[1:0-1:5]
+        LHS: Name[1:0-1:1] Value: "x" Store
+        RHS: LONG[1:4-1:5] Value: 0
+    FunctionDef[2:0-9:14]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        For[3:2-9:14]
+            Target: Name[3:6-3:7] Value: "x" Store
+            Iter: 
+                Call[3:11-3:19]
+                    Target: Name[3:11-3:16] Value: "range"
+                    Args:
+                        LONG[3:17-3:18] Value: 3
+            Body:
+                Assign[4:4-4:9]
+                    LHS: Name[4:4-4:5] Value: "x" Store
+                    RHS: LONG[4:8-4:9] Value: 4
+                If[5:4-9:14]
+                    Test: 
+                        Compare[5:7-5:13]
+                            LHS: Name[5:7-5:8] Value: "x"
+                            Op: Eq
+                            RHS: LONG[5:12-5:13] Value: 1
+                    Then:
+                        Call[6:6-6:20]
+                            Target: Name[6:6-6:11] Value: "print"
+                            Args:
+                                RAW[6:12-6:19] Value: "jedna"
+                        Break[7:6-7:11]
+                    Else:
+                        Call[9:6-9:14]
+                            Target: Name[9:6-9:11] Value: "print"
+                            Args:
+                                Name[9:12-9:13] Value: "x"
+        ---- End of fn function ----
+    Call[11:0-11:4]
+        Target: Name[11:0-11:2] Value: "fn"

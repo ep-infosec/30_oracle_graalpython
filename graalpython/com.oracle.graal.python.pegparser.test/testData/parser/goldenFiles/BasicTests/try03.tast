@@ -1,0 +1,25 @@
+Input:
+------
+def fn():
+  try:
+    pass
+  except ValueError as va:
+    pass
+
+Output:
+-------
+Module[1:0-5:8]
+    FunctionDef[1:0-5:8]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        Try[2:2-5:8]
+            Body:
+                Pass[3:4-3:8]
+            Except:
+                ExceptHandler[4:2-5:8]
+                    Type: Name[4:9-4:19] Value: "ValueError"
+                    Var: va
+                    Body:
+                        Pass[5:4-5:8]
+        ---- End of fn function ----

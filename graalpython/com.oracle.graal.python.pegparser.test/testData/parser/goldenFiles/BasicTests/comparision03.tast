@@ -1,0 +1,15 @@
+Input:
+------
+1 < '10' > True != 1.0
+
+Output:
+-------
+Module[1:0-1:22]
+    Compare[1:0-1:22]
+        LHS: LONG[1:0-1:1] Value: 1
+        Op: Lt
+        RHS: RAW[1:4-1:8] Value: "10"
+        Op: Gt
+        RHS: BOOLEAN[1:11-1:15] Value: true
+        Op: NotEq
+        RHS: DOUBLE[1:19-1:22] Value: 1.0

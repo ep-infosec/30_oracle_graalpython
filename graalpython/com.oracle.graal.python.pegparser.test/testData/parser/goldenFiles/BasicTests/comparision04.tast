@@ -1,0 +1,15 @@
+Input:
+------
+x < y() <= z
+
+Output:
+-------
+Module[1:0-1:12]
+    Compare[1:0-1:12]
+        LHS: Name[1:0-1:1] Value: "x"
+        Op: Lt
+        RHS: 
+            Call[1:4-1:7]
+                Target: Name[1:4-1:5] Value: "y"
+        Op: LtE
+        RHS: Name[1:11-1:12] Value: "z"

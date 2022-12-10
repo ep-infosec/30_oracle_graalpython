@@ -1,0 +1,35 @@
+Input:
+------
+def gen(x):
+   while x:
+     pass
+   while x:
+     x = x-1
+     yield x
+
+Output:
+-------
+Module[1:0-6:12]
+    FunctionDef[1:0-6:12]
+        Name:gen
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:8-1:9] x
+        ---- Function body of gen ----
+        While[2:3-3:9]
+            Condition: Name[2:9-2:10] Value: "x"
+            Body:
+                Pass[3:5-3:9]
+        While[4:3-6:12]
+            Condition: Name[4:9-4:10] Value: "x"
+            Body:
+                Assign[5:5-5:12]
+                    LHS: Name[5:5-5:6] Value: "x" Store
+                    RHS: 
+                        BinOp[5:9-5:12]
+                            Op: Sub
+                            LHS: Name[5:9-5:10] Value: "x"
+                            RHS: LONG[5:11-5:12] Value: 1
+                Yield[6:5-6:12]
+                    Name[6:11-6:12] Value: "x"
+        ---- End of gen function ----

@@ -1,0 +1,10 @@
+Input:
+------
+a or b
+
+Output:
+-------
+Module[1:0-1:6]
+    BoolOp[1:0-1:6]: Or
+        Name[1:0-1:1] Value: "a"
+        Name[1:5-1:6] Value: "b"

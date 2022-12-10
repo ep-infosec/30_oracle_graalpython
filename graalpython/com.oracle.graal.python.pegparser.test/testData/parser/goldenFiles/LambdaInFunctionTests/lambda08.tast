@@ -1,0 +1,25 @@
+Input:
+------
+def fn():
+  lambda foo=bar, spaz=nifty+spit: 0
+
+Output:
+-------
+Module[1:0-2:36]
+    FunctionDef[1:0-2:36]
+        Name:fn
+        ArgumentsTy[1:0-1:0]
+        ---- Function body of fn ----
+        Lambda[2:2-2:36]
+            ArgumentsTy[1:0-1:0]
+                Args:
+                    ArgTy[2:9-2:12] foo
+                    ArgTy[2:18-2:22] spaz
+                Defaults:
+                    Name[2:13-2:16] Value: "bar"
+                    BinOp[2:23-2:33]
+                        Op: Add
+                        LHS: Name[2:23-2:28] Value: "nifty"
+                        RHS: Name[2:29-2:33] Value: "spit"
+            Body: LONG[2:35-2:36] Value: 0
+        ---- End of fn function ----

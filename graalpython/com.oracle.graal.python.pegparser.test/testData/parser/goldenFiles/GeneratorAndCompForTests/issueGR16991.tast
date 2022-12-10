@@ -1,0 +1,44 @@
+Input:
+------
+def gen(x): 
+  while x: 
+    if x == 10: 
+      break 
+    x = x - 1 
+    yield x 
+  else: 
+    yield 100
+
+Output:
+-------
+Module[1:0-8:13]
+    FunctionDef[1:0-8:13]
+        Name:gen
+        ArgumentsTy[1:0-1:0]
+            Args:
+                ArgTy[1:8-1:9] x
+        ---- Function body of gen ----
+        While[2:2-8:13]
+            Condition: Name[2:8-2:9] Value: "x"
+            Body:
+                If[3:4-4:11]
+                    Test: 
+                        Compare[3:7-3:14]
+                            LHS: Name[3:7-3:8] Value: "x"
+                            Op: Eq
+                            RHS: LONG[3:12-3:14] Value: 10
+                    Then:
+                        Break[4:6-4:11]
+                Assign[5:4-5:13]
+                    LHS: Name[5:4-5:5] Value: "x" Store
+                    RHS: 
+                        BinOp[5:8-5:13]
+                            Op: Sub
+                            LHS: Name[5:8-5:9] Value: "x"
+                            RHS: LONG[5:12-5:13] Value: 1
+                Yield[6:4-6:11]
+                    Name[6:10-6:11] Value: "x"
+            Else:
+                Yield[8:4-8:13]
+                    LONG[8:10-8:13] Value: 100
+        ---- End of gen function ----

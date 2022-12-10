@@ -1,0 +1,9 @@
+Input:
+------
+from .. import name
+
+Output:
+-------
+Module[1:0-1:19]
+    ImportFrom[1:0-1:19] Level 2 null
+        name
